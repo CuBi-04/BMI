@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <title>Tính BMI</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tính BMI</h1>
+    <input type="number" id="height" placeholder="Chiều cao (cm)">
+    <input type="number" id="weight" placeholder="Cân nặng (kg)">
+    <button onclick="calculateBMI()">Tính BMI</button>
+    <div id="result"></div>
+    <button onclick="takePhoto()">Chụp ảnh</button>
+    <button onclick="Share()">Chia sẻ kết quả</button>
+    
+    <script src="script.js"></script>
+    <script type="module">
+        import { Camera } from '@capacitor/camera';
+        window.Camera = Camera;
+        import { LocalNotifications } from '@capacitor/local-notifications';
+        window.LocalNotifications = LocalNotifications;
+        import { Share } from '@capacitor/share';
+        window.Share = Share;
+    </script>
+</body>
+</>
